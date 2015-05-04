@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>12DDC3F8-6424-4A5B-90EC-772C7C9D0D3E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ExemploAula01</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0752A5AF6BCB54106785759977588F2113D3ECB0</key>
 		<string>https://github.com/intellitour/disp.movel2014-ios</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Exemplos/ExemploAula01/ExemploAula01.xcodeproj/project.xcworkspace</string>
+	<string>Exemplos/ExemploAula01/ExemploAula01.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0752A5AF6BCB54106785759977588F2113D3ECB0</key>
