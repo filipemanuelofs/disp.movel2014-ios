@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0E23EC74-3C5E-41DD-9B9A-70D335B62407</string>
+	<string>28406BEC-18D0-49D3-9F17-8EE9864E4199</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ExemploGestos</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0752A5AF6BCB54106785759977588F2113D3ECB0</key>
 		<string>https://github.com/intellitour/disp.movel2014-ios</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Exemplos/ExemploGestos/ExemploGestos.xcodeproj</string>
+	<string>Exemplos/ExemploAula04/ExemploAula04.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0752A5AF6BCB54106785759977588F2113D3ECB0</key>
