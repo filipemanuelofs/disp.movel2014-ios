@@ -422,6 +422,7 @@
 				EB06420A1B2897E100217487 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB06420B1B2897E100217487 /* Build configuration list for PBXNativeTarget "ExemploDynamicAnimatorTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				EB06420D1B2897E100217487 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,7 @@
 
 #import "CairBehavior.h"
 
-@interface CairBehavior ()
+@interface CairBehavior () <UICollisionBehaviorDelegate>
 @property (strong, nonatomic, readonly) UIGravityBehavior *gravidade;
 @property (strong, nonatomic, readonly) UICollisionBehavior *colisao;
 @end
@@ -41,10 +41,28 @@
     if (!_colisao) {
         _colisao = [[UICollisionBehavior alloc] init];
         [_colisao setTranslatesReferenceBoundsIntoBoundary:YES]; //faz com que as "paredes" da view sirvam para a colisão
+        [_colisao setCollisionDelegate:self];
     }
     return _colisao;
 }
 
+
+- (void)collisionBehavior:(UICollisionBehavior*)behavior beganContactForItem:(id <UIDynamicItem>)item1 withItem:(id <UIDynamicItem>)item2 atPoint:(CGPoint)p {
+    id<UIDynamicItem> alvo = nil;
+    
+    if ([behavior.items containsObject:item1]) {
+        alvo = item1;
+    }
+    if ([behavior.items containsObject:item2]) {
+        alvo = item2;
+    }
+    
+    
+    UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:alvo snapToPoint:[[[UIApplication sharedApplication] keyWindow] center]];
+    [self.dynamicAnimator addBehavior:snap];
+    
+    [self.dynamicAnimator performSelector:@selector(removeBehavior:) withObject:snap afterDelay:0.7];
+}
 
 - (void) adicionarItem: (id<UIDynamicItem>) item {
     [self.gravidade addItem:item];

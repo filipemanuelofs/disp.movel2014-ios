@@ -51,21 +51,46 @@ static const CGSize TAMANHO_DO_QUADRADO = { 40, 40 };
 - (void)viewDidLoad {
     [super viewDidLoad];
     _quadradinhos = [NSMutableArray new];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(quadradoNoDedo:)];
+    [_tabuleiro addGestureRecognizer:tap];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void) quadradoNoDedo: (UITapGestureRecognizer *) sender {
+    CGPoint onde = [sender locationInView:_tabuleiro];
+    
+    CGRect frame;
+    frame.origin = onde;
+    frame.size = TAMANHO_DO_QUADRADO;
+    
+    UIView *quadradinho = [[UIView alloc] initWithFrame:frame];
+    [quadradinho setBackgroundColor:[self gerarCorRealmenteAleatoria]];
+    
+    [self.tabuleiro addSubview:quadradinho];
+    [self.cairBehavior adicionarItem:quadradinho];
+    [self.quadradinhos addObject:quadradinho];
+    
+    
+//    UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:quadradinho snapToPoint:onde];
+//    [snap setDamping:0.8];
+//    
+//    [self.animator performSelector:@selector(addBehavior:) withObject:snap afterDelay:1.1];
+//    [self.animator performSelector:@selector(removeBehavior:) withObject:snap afterDelay:1.3];
+    
+}
+
+
 
 #pragma mark - IBActions
-
 - (IBAction)fazerCairQuadrado:(UIButton *)sender {
     CGRect frame;
     frame.origin = CGPointZero;
     frame.size = TAMANHO_DO_QUADRADO;
-    
     
     int x = (arc4random()%(int)self.tabuleiro.bounds.size.width) / TAMANHO_DO_QUADRADO.width; //Cálculo para determinar onde o quadrado vai surgir
     frame.origin.x = x * TAMANHO_DO_QUADRADO.width;
@@ -108,6 +133,15 @@ static const CGSize TAMANHO_DO_QUADRADO = { 40, 40 };
         case 4: return [UIColor purpleColor];
     }
     return [UIColor blackColor];
+}
+
+
+- (UIColor *) gerarCorRealmenteAleatoria {
+    float r = (arc4random()%256)/255.0f;
+    float g =(arc4random()%256)/255.0f;
+    float b = (arc4random()%256)/255.0f;
+    
+    return [UIColor colorWithRed:r green:g blue:b alpha:1];
 }
 
 
